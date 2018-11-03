@@ -1,0 +1,27 @@
+# Created by "bud init"
+
+up:
+  - python: 3.7.0
+  - pipfile
+  - python_develop
+  # - pip: [tests/requirements.txt]
+
+commands:
+  test:
+    desc: Run the unittests
+    run: script/test
+
+  typing:
+    desc: Lint the project
+    run: mypy --strict cognac
+
+  release:
+    desc: Create a new release (bud release [VERSION])
+    run: script/release
+
+  godoc:
+    desc: Starting GoDoc server on http://0.0.0.0:6060
+    run: (sleep 1; open http://0.0.0.0:6060)& godoc -http=:6060
+
+open:
+  devbuddy: https://github.com/devbuddy/devbuddy/blob/master/docs/Config.md#config-devyml
